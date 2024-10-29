@@ -12,9 +12,15 @@ services:
       database__client: mysql
       database__connection__host: db
       database__connection__user: root
-      database__connection__password: password
+      database__connection__password: "${MYSQL_ROOT_PASSWORD}"
       database__connection__database: ghost
-      mail__from: noreply@frii.design
+      mail__from: 'FRII <noreply@frii.design>'
+      mail__transport: "${MAIL_TRANSPORT}"
+      mail__options__host: "${MAIL_HOST}"
+      mail__options__port: "${MAIL_PORT}"
+      mail__options__secureConnection: "${MAIL_SECURE_CONNECTION}"
+      mail__options__auth__user: "${MAIL_USER}"
+      mail__options__auth__pass: "${MAIL_PASSWORD}"
     depends_on:
       db:
         condition: service_started
@@ -25,6 +31,6 @@ services:
     ports:
       - '127.0.0.1:3306:3306'
     environment:
-      - MYSQL_ROOT_PASSWORD=password
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
     volumes:
       - ./volumes/db:/var/lib/mysql
