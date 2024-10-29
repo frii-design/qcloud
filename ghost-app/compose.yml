@@ -14,7 +14,7 @@ services:
       database__connection__user: root
       database__connection__password: "${MYSQM_PASSWORD}"
       database__connection__database: ghost
-      mail__from: "${MAIL_USER}"
+      mail__from: noreply@frii.design
       mail__transport: SMTP
       mail__options__host: smtp.resend.com
       mail__options__port: 587
