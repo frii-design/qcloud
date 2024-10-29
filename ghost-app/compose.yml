@@ -1,6 +1,6 @@
 services:
   app:
-    image: public.ecr.aws/docker/library/ghost:5-alpine
+    image: public.ecr.aws/docker/library/ghost:5.97.3-alpine
     restart: always
     container_name: ghost-app
     ports:
