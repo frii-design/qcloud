@@ -14,10 +14,10 @@ services:
       database__connection__user: root
       database__connection__password: "${MYSQM_PASSWORD}"
       database__connection__database: ghost
-      mail__from: 'FRII <noreply@frii.design>'
+      mail__from: 'FRII <nano-exp@outlook.com>'
       mail__transport: SMTP
       mail__options__host: smtp.office365.com
-      mail__options__port: 587
+      mail__options__port: 465
       mail__options__secureConnection: true
       mail__options__auth__user: "${MAIL_USER}"
       mail__options__auth__pass: "${MAIL_PASSWORD}"
