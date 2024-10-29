@@ -14,6 +14,7 @@ services:
       database__connection__user: root
       database__connection__password: password
       database__connection__database: ghost
+      mail__from: noreply@frii.design
     depends_on:
       db:
         condition: service_started
