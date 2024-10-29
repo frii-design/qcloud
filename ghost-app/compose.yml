@@ -24,6 +24,7 @@ services:
     depends_on:
       db:
         condition: service_started
+    env_file: '.env'
   db:
     image: public.ecr.aws/docker/library/mysql:8
     restart: always
@@ -34,3 +35,4 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
     volumes:
       - ./volumes/db:/var/lib/mysql
+    env_file: '.env'
