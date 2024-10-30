@@ -12,7 +12,7 @@ services:
       database__client: mysql
       database__connection__host: db
       database__connection__user: root
-      database__connection__password: "${MYSQM_PASSWORD}"
+      database__connection__password: "${DB_PASSWORD}"
       database__connection__database: ghost
       mail__from: noreply@frii.design
       mail__transport: SMTP
@@ -24,16 +24,16 @@ services:
       db:
         condition: service_started
     env_file:
-     - ./.env
+      - ./.env
   db:
-    image: public.ecr.aws/docker/library/mysql:8
+    image: public.ecr.aws/docker/library/mysql:8.2.0
     restart: always
     container_name: ghost-db
     ports:
       - '127.0.0.1:3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
     volumes:
       - ./volumes/db:/var/lib/mysql
     env_file:
-     - ./.env
+      - ./.env
