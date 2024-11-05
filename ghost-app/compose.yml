@@ -16,9 +16,9 @@ services:
       database__connection__database: ghost
       mail__from: noreply@frii.design
       mail__transport: SMTP
-      mail__options__host: smtp.resend.com
-      mail__options__port: 587
-      mail__options__auth__user: "${MAIL_USER}"
+      mail__options__host: "${MAIL_SMTP_HOST}"
+      mail__options__port: "${MAIL_SMTP_PORT}"
+      mail__options__auth__user: "${MAIL_USERNAME}"
       mail__options__auth__pass: "${MAIL_PASSWORD}"
     depends_on:
       db:
