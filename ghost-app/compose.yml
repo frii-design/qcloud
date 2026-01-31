@@ -8,7 +8,7 @@ services:
     volumes:
       - ./volumes/ghost:/var/lib/ghost/content
     environment:
-      url: https://frii.design
+      url: "${APP_URL}"
       database__client: mysql
       database__connection__host: db
       database__connection__user: root
