@@ -1,8 +1,8 @@
 services:
-  app-union:
+  app:
     image: public.ecr.aws/docker/library/ghost:5.97.3-alpine
     restart: always
-    container_name: ghost-app
+    container_name: ghost-app-union
     ports:
       - '4736:2368'
     volumes:
@@ -21,14 +21,14 @@ services:
       mail__options__auth__user: "${MAIL_USERNAME}"
       mail__options__auth__pass: "${MAIL_PASSWORD}"
     depends_on:
-      db-union:
+      db:
         condition: service_started
     env_file:
       - ./.env
-  db-union:
+  db:
     image: public.ecr.aws/docker/library/mysql:8.2.0
     restart: always
-    container_name: ghost-db
+    container_name: ghost-db-union
     ports:
       - '127.0.0.1:3306:3306'
     environment:
