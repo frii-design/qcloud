@@ -1,5 +1,5 @@
 services:
-  app:
+  app-union:
     image: public.ecr.aws/docker/library/ghost:5.97.3-alpine
     restart: always
     container_name: ghost-app
@@ -21,11 +21,11 @@ services:
       mail__options__auth__user: "${MAIL_USERNAME}"
       mail__options__auth__pass: "${MAIL_PASSWORD}"
     depends_on:
-      db:
+      db-union:
         condition: service_started
     env_file:
       - ./.env
-  db:
+  db-union:
     image: public.ecr.aws/docker/library/mysql:8.2.0
     restart: always
     container_name: ghost-db
