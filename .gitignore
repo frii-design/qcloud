@@ -1,1 +1,8 @@
 .idea/
+
+# Ignore nginx/html files except index.html
+nginx/html/*
+!nginx/html/50x.html
+!nginx/html/favicon.ico
+!nginx/html/favicon.ico
+
