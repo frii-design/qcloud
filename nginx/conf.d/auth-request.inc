@@ -1,7 +1,7 @@
 location = /_auth_request {
     internal;
     proxy_pass          http://127.0.0.1:3500/api/protected;
-    proxy_set_header    Host auth.frii.design;
+    proxy_set_header    Host auth.pai.mn;
     proxy_set_header    X-Real-IP $remote_addr;
     proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header    X-Forwarded-Proto $scheme;
@@ -9,6 +9,6 @@ location = /_auth_request {
 }
 
 location @login_redirect {
-    return 302 https://auth.frii.design/login?redirect=$scheme://$http_host$request_uri;
+    return 302 https://auth.pai.mn/login?redirect=$scheme://$http_host$request_uri;
 }
 
