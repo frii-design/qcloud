@@ -1,25 +1,29 @@
-tun.frii.design {
+{
+	auto_https off
+}
+
+http://frp.frii.design {
 	reverse_proxy 127.0.0.1:5500 {
 		header_up Host {host}
 		header_up X-Real-IP {client_ip}
 	}
 }
 
-friisig.com, www.friisig.com, friisig.frii.design {
+http://friisig.com, http://www.friisig.com, http://friisig.frii.design {
 	reverse_proxy 127.0.0.1:4736 {
 		header_up Host {host}
 		header_up X-Real-IP {client_ip}
 	}
 }
 
-frii.design, frii.frii.design {
+http://frii.design, http://frii.frii.design {
 	reverse_proxy 127.0.0.1:2368 {
 		header_up Host {host}
 		header_up X-Real-IP {client_ip}
 	}
 }
 
-static.frii.design {
+http://static.frii.design {
 	root * ./html
 	try_files {path} {path}/index.html
 	file_server
