@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 cd "$(dirname "$0")" || exit 1
 
-pm2 restart ./caddy.sh
+pm2 restart ./lb.sh
