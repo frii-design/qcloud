@@ -20,7 +20,7 @@ http://friisig.com, http://www.friisig.com, http://friisig.frii.design {
 	}
 }
 
-http://frii.design, http://frii.frii.design {
+http://frii.design, http://www.frii.design, http://frii.frii.design {
 	reverse_proxy 127.0.0.1:2368 {
 		header_up Host {host}
 		header_up X-Real-IP {http.request.header.CF-Connecting-IP}
