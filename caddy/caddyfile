@@ -38,7 +38,7 @@ http://static.frii.design {
 
 # -----------------------------------------------------------------------------
 
-http://li.sh.tc.nano.properties {
+http://li.sh.tc.nano.properties:32101 {
         @bypass path /ws/*
         handle @bypass {
                 reverse_proxy 127.0.0.1:32101 {
