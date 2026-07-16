@@ -34,3 +34,29 @@ http://static.frii.design {
 	try_files {path} {path}/index.html
 	file_server
 }
+
+
+# -----------------------------------------------------------------------------
+
+http://li.sh.tc.nano.properties {
+        @bypass path /ws/*
+        handle @bypass {
+                reverse_proxy 127.0.0.1:32101 {
+                        header_up Host {host}
+                        header_up X-Real-IP {client_ip}
+                }
+        }
+        handle {
+                reverse_proxy 127.0.0.1:32101 {
+                        header_up Host {host}
+                        header_up X-Real-IP {client_ip}
+                }
+        }
+}
+
+
+
+
+
+
+
